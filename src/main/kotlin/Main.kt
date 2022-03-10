@@ -1,4 +1,5 @@
 import commands.HelloPyshnikCommand
+import commands.HelloFromSiarhey
 import commands.HelloShatokhinCommand
 import commands.PrintHelloCommand
 import java.util.*
@@ -6,7 +7,8 @@ import java.util.*
 val allCommands = listOf(
     PrintHelloCommand(),
     HelloShatokhinCommand(),
-    HelloPyshnikCommand()
+    HelloPyshnikCommand(),
+    HelloFromSiarhey()
 )
 
 fun main() {
