@@ -1,3 +1,4 @@
+import commands.HelloFromSiarhey
 import commands.HelloShatokhinCommand
 import commands.PrintHelloCommand
 import commands.ShowLocalDateTime
@@ -6,6 +7,7 @@ import java.util.*
 val allCommands = listOf(
     PrintHelloCommand(),
     HelloShatokhinCommand(),
+    HelloFromSiarhey(),
     ShowLocalDateTime()
 )
 
