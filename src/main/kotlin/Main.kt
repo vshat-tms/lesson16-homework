@@ -26,7 +26,11 @@ fun main() {
         print("Enter command: ")
         when (val commandText = scanner.nextLine()) {
             "help" -> {
-                println("my program")
+                allCommands
+                    .sortedBy { it.keyword.lowercase(Locale.getDefault()) }
+                    .forEach {
+                        println("${it.keyword} - ${it.description}")
+                    }
             }
             "exit" -> {
                 isProgramWorking = false
