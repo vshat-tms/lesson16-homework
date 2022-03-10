@@ -1,10 +1,12 @@
 import commands.HelloShatokhinCommand
+import commands.Sibogatov
 import commands.PrintHelloCommand
 import java.util.*
 
 val allCommands = listOf(
     PrintHelloCommand(),
-    HelloShatokhinCommand()
+    HelloShatokhinCommand(),
+    Sibogatov()
 )
 
 fun main() {
