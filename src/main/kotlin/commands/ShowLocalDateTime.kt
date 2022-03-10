@@ -10,6 +10,6 @@ class ShowLocalDateTime : Command {
 
     override fun execute(text: String) {
         val currentDate = SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(Date())
-        println("Дата: $currentDate")
+        println("Дата сегодня: $currentDate")
     }
 }
