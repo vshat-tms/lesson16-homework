@@ -1,3 +1,4 @@
+import commands.HelloPyshnikCommand
 import commands.HelloFromSiarhey
 import commands.HelloGrebnevCommand
 import commands.HelloShatokhinCommand
@@ -10,6 +11,7 @@ val allCommands = listOf(
     PrintHelloCommand(),
     HelloShatokhinCommand(),
     Sibogatov(),
+    HelloPyshnikCommand(),
     HelloFromSiarhey(),
     HelloGrebnevCommand(),
     ShowLocalDateTime()
