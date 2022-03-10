@@ -1,14 +1,18 @@
 import commands.HelloPyshnikCommand
 import commands.HelloFromSiarhey
+import commands.HelloGrebnevCommand
 import commands.HelloShatokhinCommand
 import commands.PrintHelloCommand
+import commands.ShowLocalDateTime
 import java.util.*
 
 val allCommands = listOf(
     PrintHelloCommand(),
     HelloShatokhinCommand(),
     HelloPyshnikCommand(),
-    HelloFromSiarhey()
+    HelloFromSiarhey(),
+    HelloGrebnevCommand(),
+    ShowLocalDateTime()
 )
 
 fun main() {
