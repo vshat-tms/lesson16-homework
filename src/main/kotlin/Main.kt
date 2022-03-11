@@ -9,7 +9,11 @@ val allCommands = listOf(
     HelloFromSiarhey(),
     HelloGrebnevCommand(),
     ShowLocalDateTime(),
-    Ulasevich()
+    Ulasevich(),
+    TimerFromSiarhey(),
+    FahrenheitToCelsiusFromSiarhey(),
+    CelsiusToFahrenheitFromDiarrhea(),
+    FizzBuzzFromSiarhey()
 )
 
 fun main() {
