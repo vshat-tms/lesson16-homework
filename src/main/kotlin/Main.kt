@@ -1,3 +1,7 @@
+import Ermoshin_Stepan.CelsiusToFahrenheits
+import Ermoshin_Stepan.FahrenheitToCelsius
+import Ermoshin_Stepan.Fizzbuzz
+import Ermoshin_Stepan.TimerCommand
 import commands.*
 import java.util.*
 
@@ -9,7 +13,11 @@ val allCommands = listOf(
     HelloFromSiarhey(),
     HelloGrebnevCommand(),
     ShowLocalDateTime(),
-    Ulasevich()
+    Ulasevich(),
+    FahrenheitToCelsius(),
+    CelsiusToFahrenheits(),
+    Fizzbuzz(),
+    TimerCommand()
 )
 
 fun main() {
