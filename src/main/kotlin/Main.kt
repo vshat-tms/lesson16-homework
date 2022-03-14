@@ -9,7 +9,8 @@ val allCommands = listOf(
     HelloFromSiarhey(),
     HelloGrebnevCommand(),
     ShowLocalDateTime(),
-    Ulasevich()
+    Ulasevich(),
+    HelloFromVika()
 )
 
 fun main() {
