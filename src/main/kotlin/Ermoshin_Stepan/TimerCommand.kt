@@ -8,11 +8,8 @@ class TimerCommand : Command {
 
     override fun execute(text: String) {
         try {
-            val timerApex = if (text.isNotBlank()) {
-                text.toInt()
-            } else {
-                5
-            }
+            var timerApex = text.toInt()
+            if (timerApex > 10 || timerApex < 5) timerApex = 5
 
             for (x in timerApex downTo 0) {
                 if (x != 0) {
