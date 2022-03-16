@@ -7,14 +7,13 @@ class Fizzbuzz : Command {
     override val description: String = "makes 'fizzbuzz' :)"
 
     override fun execute(text: String) {
-        val isTrue = true
         var digit = 0
 
         try {
             digit = text.toInt()
             if (digit in 20..100) {
                 for (x in 1..digit){
-                    when (isTrue) {
+                    when {
                         x % 15 == 0 -> println("FizzBuzz")
 
                         x % 5 == 0 -> println("Buzz")
