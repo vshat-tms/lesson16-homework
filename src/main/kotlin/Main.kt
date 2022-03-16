@@ -9,7 +9,11 @@ val allCommands = listOf(
     HelloFromSiarhey(),
     HelloGrebnevCommand(),
     ShowLocalDateTime(),
-    Ulasevich()
+    Ulasevich(),
+    Sib_timer(),
+    Sib_F_to_C(),
+    Sib_C_to_F(),
+    Sib_fizzbuzz()
 )
 
 fun main() {
