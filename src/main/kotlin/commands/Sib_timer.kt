@@ -15,7 +15,7 @@ class Sib_timer: Command{
 
     override fun execute(text: String) {
         try{
-            val timeValue = if (text.isNotBlank())
+            val timeValue = if (text.isNotBlank() && text.toInt() in 5..10)
             text.toInt()
             else 5
             for (it in timeValue downTo 0){
