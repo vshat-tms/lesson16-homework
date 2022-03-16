@@ -10,6 +10,7 @@ class Timer : Command {
         try {
             val num = text.toInt()
         if (num in 5..10) run(num)
+        else run()
         } catch (e: NumberFormatException){
             run()
         }
