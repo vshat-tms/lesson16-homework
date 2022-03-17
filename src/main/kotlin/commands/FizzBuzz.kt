@@ -10,32 +10,23 @@ class FizzBuzz : Command {
     override fun execute(text: String) {
 
         val scanner = Scanner(System.`in`)
-        val isTrue = true
+        var isCorrect = false
 
         println("Enter a number from 20 to 100: ")
-        val number = scanner.nextInt()
-        if (number in 20..100) {
-
-            for (number in 1..number) {
-
-                when (isTrue) {
-
-                    number % 15 == 0 -> println("FizzBuzz")
-
-                    number % 5 == 0 -> println("Buzz")
-
-                    number % 3 == 0 -> println("Fizz")
-
-                    else -> println(number)
+        while (!isCorrect) {
+            val inputNumber = scanner.nextInt()
+            isCorrect=inputNumber in 20..100
+            if (isCorrect) {
+                for (number in 1..inputNumber) {
+                    when {
+                        number % 15 == 0 -> println("FizzBuzz")
+                        number % 5 == 0 -> println("Buzz")
+                        number % 3 == 0 -> println("Fizz")
+                        else -> println(number)
+                    }
                 }
-            }
-        } else (number !in 20..100)
-        print("Enter the correct number: ")
-        val number1 = scanner.nextInt()
-        if (number1 in 20..100) {
-            for (number1 in 1..number1) {
-                println(number1)
-            }
+            } else
+                println("Enter the correct number: ")
         }
     }
 }
