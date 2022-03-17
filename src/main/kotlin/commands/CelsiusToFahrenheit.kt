@@ -1,11 +1,11 @@
 package commands
 
 fun main() {
-    val myC_to_f = C_to_f()
-    myC_to_f.c_to_f()
+    val celsiusToFahrenheit = CelsiusToFahrenheit()
+    celsiusToFahrenheit.c_to_f()
 }
 
-class C_to_f(){
+class CelsiusToFahrenheit(){
     fun c_to_f(){
             print("Введите значение °C: ")
             val valueC = scanner.nextDouble()

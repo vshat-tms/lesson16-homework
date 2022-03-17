@@ -12,7 +12,7 @@ class Timer() {
         print("Введете начало отсчета от 5 до 10: ")
         val value = scanner.nextInt()
         if (value >= 5 && value <= 10) {
-            for (i in value downTo 0) {
+            for (i in value downTo 1) {
                 println("$i..")
                 Thread.sleep(1000)
             }
@@ -22,5 +22,6 @@ class Timer() {
                 Thread.sleep(1000)
             }
         }
+        println(0)
     }
 }

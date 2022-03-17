@@ -3,17 +3,16 @@ package commands
 import java.util.*
 
 fun main() {
-    val myFizzbuzz = Fizzbuzz()
+    val myFizzbuzz = FizzBazz()
     myFizzbuzz.fizzbuzz()
 
 }
 
 val scanner = Scanner(System.`in`)
 
-class Fizzbuzz(){
+class FizzBazz(){
     fun fizzbuzz(){
         print("Введите число от 20 до 100 включительно: ")
-        try {
             val valueF = scanner.nextInt()
             if (valueF in 20..100){
                 for (i in 1..valueF) {
@@ -25,10 +24,8 @@ class Fizzbuzz(){
                     }
 
                 }
-            }else println("Ошибка ввода.")
-        }catch (e: NumberFormatException) {
-            println("Ошибка ввода.")
-        }
-
+            }else {
+                throw NumberFormatException("Ошибка ввода.")
+            }
     }
 }
