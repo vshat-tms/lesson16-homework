@@ -1,5 +1,8 @@
 # Домашка до четверга, 17 марта
 
+## Общий прогресс ДЗ
+https://github.com/vshat-tms/homework-all
+
 ## Kotlin Koans
 Нужно дойти до конца (решить или хотя бы по разу попробовать решить каждую задачу).
 Скидывайте [сюда](https://github.com/vshat-tms/lesson16-homework/issues/1) скриншоты вашего прогресса.
