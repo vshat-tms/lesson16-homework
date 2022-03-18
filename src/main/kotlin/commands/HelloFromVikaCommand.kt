@@ -2,7 +2,7 @@ package commands
 
 import Command
 
-class HelloFromVika: Command {
+class HelloFromVikaCommand: Command {
     override val keyword = "vika"
     override val description = "say hello from vika"
 

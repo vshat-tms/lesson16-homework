@@ -1,4 +1,19 @@
-package hwLesson16
+package commands
+
+import Command
+import java.util.*
+
+class FizzbuzzCommand : Command {
+    override val keyword = "fizzbuzz"
+    override val description = "makes fizzbuzz"
+
+    override fun execute(text: String) {
+        println("Enter number from 20 to 100")
+        val scanner = Scanner(System.`in`)
+        val inputNumber = scanner.nextLine()
+        fizzbuzz(inputNumber)
+    }
+}
 
 fun fizzbuzz(input: String) {
     try {
