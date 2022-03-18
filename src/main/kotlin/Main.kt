@@ -1,5 +1,4 @@
 import commands.*
-import commands.Timer
 import java.util.*
 
 val allCommands = listOf(
@@ -11,10 +10,10 @@ val allCommands = listOf(
     HelloGrebnevCommand(),
     ShowLocalDateTime(),
     Ulasevich(),
-    Timer(),
-    F_To_C(),
-    C_To_F(),
-    FizzBuzz()
+    TimerCommand(),
+    FahrenheitToCelsiusCommand(),
+    CelsiusToFahrenheitCommand(),
+    FizzBuzzCommand()
 )
 
 fun main() {
@@ -40,13 +39,13 @@ fun main() {
                 val args = commandText.split(" ")
                 val commandName = args[0]
                 var commandArgument = ""
-                if(args.size > 1) {
+                if (args.size > 1) {
                     commandArgument = args[1]
                 }
 
                 val command = allCommands.find { it.keyword == commandName }
 
-                if(command !=null) {
+                if (command != null) {
                     command.execute(commandArgument)
                 } else {
                     println("unknown command: $commandName")

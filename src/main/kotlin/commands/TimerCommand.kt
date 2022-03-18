@@ -2,23 +2,27 @@ package commands
 
 import Command
 
-class Timer : Command {
+class TimerCommand : Command {
     override val keyword: String = "timer"
     override val description: String = "Enter an integer in the range 5...10 to start the timer"
 
     override fun execute(text: String) {
+        val inputNum: Int
         try {
-            val num = text.toInt()
-        if (num in 5..10) run(num)
-        else run()
-        } catch (e: NumberFormatException){
-            run()
+            inputNum = text.toInt()
+        } catch (e: NumberFormatException) {
+            startedTimer()
+            return
+        }
+        if (inputNum in 5..10) {
+            startedTimer(inputNum)
+        } else {
+            startedTimer()
         }
     }
 
-
-    private fun run(num: Int = 5) {
-        var i = num
+    private fun startedTimer(sec: Int = 5) {
+        var i = sec
         while (i != 0) {
             println("$i...")
             i--
