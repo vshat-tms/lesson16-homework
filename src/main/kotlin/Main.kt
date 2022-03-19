@@ -1,4 +1,5 @@
 import commands.*
+import commands.Timer
 import java.util.*
 
 val allCommands = listOf(
@@ -9,7 +10,11 @@ val allCommands = listOf(
     HelloFromSiarhey(),
     HelloGrebnevCommand(),
     ShowLocalDateTime(),
-    Ulasevich()
+    HelloFromVadimUlasevich(),
+    Timer(),
+    TemperatureConversionFToC(),
+    TemperatureConversionCToF(),
+    ScreenOutPut()
 )
 
 fun main() {
@@ -38,9 +43,7 @@ fun main() {
                 if(args.size > 1) {
                     commandArgument = args[1]
                 }
-
                 val command = allCommands.find { it.keyword == commandName }
-
                 if(command !=null) {
                     command.execute(commandArgument)
                 } else {
