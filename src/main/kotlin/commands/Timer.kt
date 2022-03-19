@@ -1,27 +1,31 @@
 package commands
 
-import java.util.*
+import Command
 
-fun main() {
-    val myTimer = Timer()
-    myTimer.timer()
+
+class TimerCommand : Command {
+    override val keyword: String = "timer "
+    override val description: String = "Performs a countdown"
+
+    override fun execute(text: String) {
+        try {
+            val inputValue = text.toInt()
+            if (inputValue in 5..10) {
+                for (i in inputValue downTo 1) {
+                    println("$i..")
+                    Thread.sleep(1000)
+                }
+            } else {
+                for (i in 5 downTo 0) {
+                    println("$i..")
+                    Thread.sleep(1000)
+                }
+            }
+            println(0)
+        }catch (e : NumberFormatException) {
+            println("Некорректный ввод")
+    }
 }
 
-class Timer() {
-    fun timer() {
-        print("Введете начало отсчета от 5 до 10: ")
-        val value = scanner.nextInt()
-        if (value >= 5 && value <= 10) {
-            for (i in value downTo 1) {
-                println("$i..")
-                Thread.sleep(1000)
-            }
-        } else {
-            for (i in 5 downTo 0) {
-                println("$i..")
-                Thread.sleep(1000)
-            }
-        }
-        println(0)
-    }
+
 }

@@ -1,19 +1,18 @@
 package commands
 
-fun main() {
-    val celsiusToFahrenheit = CelsiusToFahrenheit()
-    celsiusToFahrenheit.c_to_f()
-}
+import Command
 
-class CelsiusToFahrenheit(){
-    fun c_to_f(){
-            print("Введите значение °C: ")
-            val valueC = scanner.nextDouble()
-        if (valueC is Double) {
-            val fahrenheit: Double = valueC * 1.8 + 32
-            println("°F: ${String.format("%.2f", fahrenheit)}")
-        }else {
-            throw Exception("Ошибка... Некорректный ввод.")
+class CelsiusToFahrenheitCommand : Command {
+    override val keyword: String = "c_to_f"
+    override val description: String = "Converts the temperature celsius to fahrenheit"
+
+    override fun execute(text: String) {
+        try {
+            val valueCelsius = text.toDouble()
+            val valueFahrenheit = valueCelsius * 1.8 + 32
+            println("${String.format("%.2f", valueCelsius)} °C = ${String.format("%.2f", valueFahrenheit)} °F")
+        } catch (e: NumberFormatException) {
+            println("Введите корректное значение.")
         }
     }
 }
