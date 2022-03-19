@@ -1,4 +1,5 @@
 import commands.*
+import commands.Timer
 import java.util.*
 
 val allCommands = listOf(
@@ -9,7 +10,11 @@ val allCommands = listOf(
     HelloFromSiarhey(),
     HelloGrebnevCommand(),
     ShowLocalDateTime(),
-    Ulasevich()
+    Ulasevich(),
+    Timer(),
+    CelsiusConvertor(),
+    FahrenheitConvertor(),
+    Fizzbuzz()
 )
 
 fun main() {
