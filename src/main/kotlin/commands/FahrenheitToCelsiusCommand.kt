@@ -9,7 +9,7 @@ class FahrenheitToCelsiusCommand: Command {
     override fun execute(text: String) {
         val fahrenheit: Double
         try {
-            fahrenheit = text.toDoubleOrNull()!!
+            fahrenheit = text.toDouble()
         } catch (e: NumberFormatException){
             println("An invalid value was entered")
             return
