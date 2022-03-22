@@ -1,24 +1,22 @@
 package commands
 
 import Command
-import java.util.*
 
 class CelsiusToFahrenheit : Command {
     override val keyword = "c_to_f"
     override val description = "translates celsius to fahrenheits"
 
     override fun execute(text: String) {
-        val scanner = Scanner(System.`in`)
-        val consA = 1.8
-        val consB = 32
 
         print("Enter Fahrenheit: ")
+        val celsius: Double
         try {
-            val celsius = scanner.nextDouble()
-            val fahrenheit = celsius * consA + consB
-            println("$celsius℃=" + String.format("%.2f", fahrenheit) + "F")
-        } catch (e: InputMismatchException) {
+            celsius = text.toDouble()
+        } catch (e: NumberFormatException) {
             print("Enter a number, not a letter: ")
+            return
         }
+        val fahrenheit = celsius * 1.8 + 32
+        println("${String.format("%.2f", celsius)}°C = ${String.format("%.2f", fahrenheit)}℉")
     }
 }

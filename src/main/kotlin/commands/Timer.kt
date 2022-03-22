@@ -24,6 +24,7 @@ class Timer : Command {
         for (number in 5 downTo (1)) {
             print(number)
             println("..")
+            Thread.sleep(1000)
         }
         println("0")
     }

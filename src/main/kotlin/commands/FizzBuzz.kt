@@ -15,7 +15,7 @@ class FizzBuzz : Command {
         println("Enter a number from 20 to 100: ")
         while (!isCorrect) {
             val inputNumber = scanner.nextInt()
-            isCorrect=inputNumber in 20..100
+            isCorrect = inputNumber in 20..100
             if (isCorrect) {
                 for (number in 1..inputNumber) {
                     when {
