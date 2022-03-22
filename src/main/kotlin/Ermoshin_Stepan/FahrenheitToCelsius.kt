@@ -7,14 +7,14 @@ class FahrenheitToCelsius : Command{
     override val description: String = "translates fahrenheits to celsius"
 
     override fun execute(text: String) {
-
+        var fahrenheits = 0.0
         try {
-            val fahrenheits = text.toDouble()
-            val celsius = (fahrenheits - 32) / 1.8
-            println("${String.format("%.2f", fahrenheits)} °F = ${String.format("%.2f", celsius)} °C")
+            fahrenheits = text.toDouble()
         } catch (ex: NumberFormatException) {
             println("$text isn't a number")
         }
 
+        val celsius = (fahrenheits - 32) / 1.8
+        println("${String.format("%.2f", fahrenheits)} °F = ${String.format("%.2f", celsius)} °C")
     }
 }

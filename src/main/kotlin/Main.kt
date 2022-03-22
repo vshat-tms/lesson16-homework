@@ -17,7 +17,8 @@ val allCommands = listOf(
     FahrenheitToCelsius(),
     CelsiusToFahrenheits(),
     Fizzbuzz(),
-    TimerCommand()
+    TimerCommand(),
+    Timer2()
 )
 
 fun main() {
