@@ -30,7 +30,7 @@ class Timer : Command {
                 }
             }
             println("$numOfUser")
-        }catch(e: InputMismatchException){
+        } catch (e: InputMismatchException){
             println("Uncorrect number!")
         }
     }
