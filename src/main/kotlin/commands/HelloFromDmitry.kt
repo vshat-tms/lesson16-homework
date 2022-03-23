@@ -2,11 +2,11 @@ package commands
 
 import Command
 
-class Dmitrij : Command {
+class Dmitry : Command {
     override val keyword = "Gotovko"
-    override val description = "Hello! I'm Dima"
+    override val description = "Greetings from dmitry"
 
     override fun execute(text: String) {
-        println("Hello from Dmitrij")
+        println("Hello from Dmitry")
     }
 }
