@@ -4,7 +4,7 @@ import Command
 
 
 class TimerCommand : Command {
-    override val keyword: String = "timer "
+    override val keyword: String = "timer"
     override val description: String = "Performs a countdown"
 
     override fun execute(text: String) {
