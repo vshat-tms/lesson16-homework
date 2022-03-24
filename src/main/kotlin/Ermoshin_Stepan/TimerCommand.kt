@@ -7,18 +7,20 @@ class TimerCommand : Command {
     override val description: String = "Sets and starts timer from X to 1"
 
     override fun execute(text: String) {
-        var timerApex = ZERO
+        var timerApex = 0
         try {
             timerApex = text.toInt()
         } catch (ex: NumberFormatException){
             println("$text isn't a number")
         }
 
-        if (timerApex > MAX_TIMER_VALUE || timerApex < MIN_TIMER_VALUE) timerApex = MIN_TIMER_VALUE
+        if (timerApex > MAX_TIMER_VALUE || timerApex < MIN_TIMER_VALUE) {
+            timerApex = MIN_TIMER_VALUE
+        }
 
-        for (x in timerApex downTo ZERO) {
-            if (x != ZERO) {
-                Thread.sleep(TIMER_MILLIS)
+        for (x in timerApex downTo 0) {
+            if (x != 0) {
+                Thread.sleep(TIMEOUT_MILLIS)
                 println("$x...")
             }
             else {
@@ -28,9 +30,8 @@ class TimerCommand : Command {
     }
 
     companion object {
-        const val TIMER_MILLIS : Long = 1000
+        const val TIMEOUT_MILLIS = 1000L
         const val MAX_TIMER_VALUE = 10
         const val MIN_TIMER_VALUE = 5
-        const val ZERO = 0
     }
 }
