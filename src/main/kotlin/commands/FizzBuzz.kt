@@ -4,11 +4,9 @@ import Command
 
 class FizzBuzz : Command {
     override val keyword = "fizzbuzz"
-    override val description = " Multiplicity Check: 3, 5, 15 and replacing numbers with words"
+    override val description = "Multiplicity Check: 3, 5, 15 and replacing numbers with words"
 
     override fun execute(text: String) {
-
-        var isCorrect = false
 
         println("Enter a number from 20 to 100: ")
         val inputNumber = text.toInt()
