@@ -24,7 +24,6 @@ class FizzBuzz : Command {
                 println("Enter the correct number: ")
             break
         }
-
     }
 
     companion object {
