@@ -3,6 +3,11 @@ import java.util.*
 
 val allCommands = listOf(
     PrintHelloCommand(),
+    HelloFromKirillCommand(),
+    TimerCommand(),
+    ConvertFahrenheitToCelsiusCommand(),
+    ConvertCelsiusToFahrenheitCommand(),
+    FizzBuzzCommand(),
     HelloShatokhinCommand(),
     Sibogatov(),
     HelloPyshnikCommand(),
@@ -16,6 +21,8 @@ fun main() {
     val scanner = Scanner(System.`in`)
 
     var isProgramWorking = true
+
+
 
     while (isProgramWorking) {
         print("Enter command: ")

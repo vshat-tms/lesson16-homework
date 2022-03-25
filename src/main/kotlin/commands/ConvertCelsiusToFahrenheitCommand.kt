@@ -2,16 +2,16 @@ package commands
 
 import Command
 
-class c_to_f_fromKirill: Command {
+class ConvertCelsiusToFahrenheitCommand: Command {
 
     override val keyword = "c_to_f"
     override val description = "convert celsius to fahrenheit"
 
     override fun execute(text: String) {
         try {
-            val cel = text.toDouble()
-            val fah = cel * 1.8 + 32
-            println("${String.format("%.2f", cel)} °C = ${String.format("%.2f", fah)} °F")
+            val celsius = text.toDouble()
+            val fahrenheit = celsius * 1.8 + 32
+            println("${String.format("%.2f", celsius)} °C = ${String.format("%.2f", fahrenheit)} °F")
         }catch (e: Exception){
             println("$text - not number")
         }

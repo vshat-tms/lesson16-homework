@@ -2,12 +2,11 @@ package commands
 
 import Command
 
-class fizzbuzzFromKirill: Command {
+class FizzBuzzCommand: Command {
     override val keyword = "fizzbuzz"
     override val description = "doing fizzbuzz yeaaaaah"
 
     override fun execute(text: String) {
-        val isTrue = true
         var number = 0
 
         try {
