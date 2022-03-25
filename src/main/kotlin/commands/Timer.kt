@@ -10,9 +10,9 @@ class Timer : Command {
     override fun execute(text: String) {
         val scanner = Scanner(System.`in`)
 
-        println("Enter a number from 5 to 10: ")
-        val number = scanner.nextInt()
         try {
+            println("Enter a number from 5 to 10: ")
+            val number = scanner.nextInt()
             if (number in MIN_VALUE_INPUT..MAX_VALUE_INPUT) {
                 for (number in number downTo MIN_VALUE_TIMER) {
                     println("$number..")

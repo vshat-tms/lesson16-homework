@@ -1,22 +1,19 @@
 package commands
 
 import Command
-import java.util.*
 
 class FizzBuzz : Command {
     override val keyword = "fizzbuzz"
-    override val description = " FizzBuzz ᕦ(ツ)ᕤ "
+    override val description = " Multiplicity Check: 3, 5, 15 and replacing numbers with words"
 
     override fun execute(text: String) {
 
-        val scanner = Scanner(System.`in`)
         var isCorrect = false
 
         println("Enter a number from 20 to 100: ")
-        while (!isCorrect) {
-            val inputNumber = scanner.nextInt()
-            isCorrect = inputNumber in START_RANG..END_RANG
-            if (isCorrect) {
+        val inputNumber = text.toInt()
+        while (inputNumber in START_RANG..END_RANG) {
+            if (inputNumber in START_RANG..END_RANG) {
                 for (number in 1..inputNumber) {
                     when {
                         number % FIZZBUZZ == 0 -> println("FizzBuzz")
@@ -27,7 +24,9 @@ class FizzBuzz : Command {
                 }
             } else
                 println("Enter the correct number: ")
+            break
         }
+
     }
 
     companion object {

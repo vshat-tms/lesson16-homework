@@ -8,15 +8,13 @@ class CelsiusToFahrenheit : Command {
 
     override fun execute(text: String) {
 
-        print("Enter Fahrenheit: ")
-        val celsius: Double
         try {
-            celsius = text.toDouble()
+            val celsius = text.toDouble()
+            val fahrenheit = celsius * 1.8 + 32
+            println("${String.format("%.2f", celsius)}°C = ${String.format("%.2f", fahrenheit)}℉")
         } catch (e: NumberFormatException) {
             print("Enter a number, not a letter: ")
             return
         }
-        val fahrenheit = celsius * 1.8 + 32
-        println("${String.format("%.2f", celsius)}°C = ${String.format("%.2f", fahrenheit)}℉")
     }
 }
