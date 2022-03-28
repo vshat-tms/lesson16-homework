@@ -1,38 +1,28 @@
 package commands
 
 import Command
-import java.util.*
 
 class ScreenOutPut : Command {
     override val keyword: String = "fizzbuzz"
-    override val description: String = "User enter number which enter to screen"
+    override val description: String = "User enter number which enter to screen in the range 20...100"
 
     override fun execute(text: String) {
-        var numOfUser = 0
-        var firstNumber  = 1
+        val numOfUser: Int
         try {
             numOfUser = text.toInt()
-        } catch (e: InputMismatchException){
-            println("Uncorrect number!")
+        } catch (e: NumberFormatException){
+            println("Uncorrected number!")
+            return
         }
-        when (numOfUser) {
-            in 20..100 -> {
-                while (firstNumber < numOfUser){
-                    if (firstNumber % 15 == 0) {
-                        println("FizzBuzz")
-                    } else if (firstNumber % 5 == 0) {
-                        println("Buzz")
-                    } else if (firstNumber % 3 == 0) {
-                        println("Fizz")
-                    } else {
-                        println(firstNumber)
-                    }
-                    firstNumber++
+        if (numOfUser in 20..100) {
+            for (i in 1..numOfUser) {
+                when {
+                    i % 15 == 0 -> println("FizzBuzz")
+                    i % 5 == 0 -> println("Buzz")
+                    i % 3 == 0 -> println("Fizz")
+                    else -> println(i)
                 }
             }
-            !in 20..100 -> {
-                println("Number is not in a diapozone")
-            }
-        }
+        } else println("Uncorrected number!")
     }
 }

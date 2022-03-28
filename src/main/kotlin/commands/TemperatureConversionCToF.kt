@@ -2,23 +2,22 @@ package commands
 
 import Command
 import java.text.DecimalFormat
-import java.util.*
 
 class TemperatureConversionCToF : Command {
     override val keyword: String = "c_to_f"
     override val description: String = "Temperature conversion from celsius to fahrenheit"
 
     override fun execute(text: String) {
-        println("Enter temperature in celsius:")
-        val scanner = Scanner(System.`in`)
+        val numOfUser : Double
         try {
-            var numOfUser= scanner.nextDouble()
-            var temperaturaInFahrenheit = (numOfUser * 9/5) + 32
-            println("${DecimalFormat(DECIMAL_FORMAT).format(numOfUser)} ℃ = " +
-                    "${DecimalFormat(DECIMAL_FORMAT).format(temperaturaInFahrenheit)} ℉ ")
-        } catch (e: InputMismatchException){
-            println("Uncorrect enter!")
+            numOfUser = text.toDouble()
+        } catch (e: NumberFormatException){
+            println("Uncorrected enter!")
+            return
         }
+        val temperaturaInFahrenheit = numOfUser * 1.8 + 32
+        println("${DecimalFormat(DECIMAL_FORMAT).format(numOfUser)} ℃ = " +
+                "${DecimalFormat(DECIMAL_FORMAT).format(temperaturaInFahrenheit)} ℉ ")
     }
     companion object {
         const val DECIMAL_FORMAT = "#0.00"
