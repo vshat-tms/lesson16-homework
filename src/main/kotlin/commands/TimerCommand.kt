@@ -23,9 +23,9 @@ class TimerCommand: Command {
         }
     }
 
-    private fun startTimer(time: Int = 5){
+    private fun startTimer(time: Int = MIN_TIMER_VALUE) {
         var timerCount = time
-        while (timerCount >= 0){
+        while (timerCount >= 0) {
             println("$timerCount...")
             timerCount--
             Thread.sleep(THREAD_SLEEP_TIME_MS)
@@ -34,7 +34,6 @@ class TimerCommand: Command {
 
     companion object{
         private const val THREAD_SLEEP_TIME_MS = 1000L
-        const val MAX_TIMER_VALUE = 10
         const val MIN_TIMER_VALUE = 5
     }
 }
