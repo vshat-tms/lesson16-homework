@@ -15,7 +15,6 @@ val allCommands = listOf(
     FahrenheitToCelsius(),
     CelsiusToFahrenheit(),
     FizzBuzz()
-
 )
 
 fun main() {

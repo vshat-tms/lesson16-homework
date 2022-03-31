@@ -7,11 +7,10 @@ class FizzBuzz : Command {
     override val description = "Multiplicity Check: 3, 5, 15 and replacing numbers with words"
 
     override fun execute(text: String) {
-
         println("Enter a number from 20 to 100: ")
         val inputNumber = text.toInt()
-        while (inputNumber in START_RANG..END_RANG) {
-            if (inputNumber in START_RANG..END_RANG) {
+        while (inputNumber in START_RANGE..END_RANGE) {
+            if (inputNumber in START_RANGE..END_RANGE) {
                 for (number in 1..inputNumber) {
                     when {
                         number % FIZZBUZZ == 0 -> println("FizzBuzz")
@@ -27,8 +26,8 @@ class FizzBuzz : Command {
     }
 
     companion object {
-        private const val START_RANG = 20
-        private const val END_RANG = 100
+        private const val START_RANGE = 20
+        private const val END_RANGE = 100
         private const val FIZZ = 3
         private const val BUZZ = 5
         private const val FIZZBUZZ = 15
