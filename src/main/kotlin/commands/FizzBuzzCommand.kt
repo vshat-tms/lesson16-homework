@@ -1,29 +1,37 @@
 package commands
 
 import Command
+import java.lang.NumberFormatException
 
 class FizzBuzzCommand: Command {
     override val keyword = "fizzbuzz"
-    override val description = "doing fizzbuzz yeaaaaah"
+    override val description = "Pls enter an integer in the rage from $START_RANGE_VALUE to $END_RANGE_VALUE"
 
     override fun execute(text: String) {
-        var number = 0
-
+        val inputNumber: Int
         try {
-            number = text.toInt()
-            if(number in 20..100){
-                for (x in 1..number){
-                    when(x <= number){
-                        x % 15 == 0 -> println("fizzbuzz")
-                        x % 5 == 0 -> println("fizz")
-                        x % 3 == 0 -> println("buzz")
-                        else -> println(x)
-                    }
-                }
-            }else println("$text is not in range from 20 to 100")
-
-        }catch (e: Exception){
-            println("$number is not int")
+            inputNumber = text.toInt()
+        }catch (e: NumberFormatException){
+            println("Error $description")
+            return
         }
+        if (inputNumber in START_RANGE_VALUE..END_RANGE_VALUE){
+            for (i in 1..inputNumber){
+                when{
+                    i % FIZZBUZZ_VALUE == 0 -> println("FizzBuzz")
+                    i % BUZZ_VALUE == 0 -> println("Buzz")
+                    i % FIZZ_VALUE == 0 -> println("Fizz")
+                    else -> println(i)
+                }
+            }
+        }else println("Error $description")
+    }
+
+    companion object{
+        const val START_RANGE_VALUE = 20
+        const val END_RANGE_VALUE = 100
+        const val FIZZBUZZ_VALUE = 15
+        const val BUZZ_VALUE = 5
+        const val FIZZ_VALUE = 3
     }
 }

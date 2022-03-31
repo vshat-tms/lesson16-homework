@@ -1,6 +1,7 @@
 package commands
 
 import Command
+import java.lang.NumberFormatException
 
 class ConvertCelsiusToFahrenheitCommand: Command {
 
@@ -8,12 +9,14 @@ class ConvertCelsiusToFahrenheitCommand: Command {
     override val description = "convert celsius to fahrenheit"
 
     override fun execute(text: String) {
+        val celsius: Double
         try {
-            val celsius = text.toDouble()
-            val fahrenheit = celsius * 1.8 + 32
-            println("${String.format("%.2f", celsius)} °C = ${String.format("%.2f", fahrenheit)} °F")
-        }catch (e: Exception){
+            celsius = text.toDouble()
+        }catch (e: NumberFormatException){
             println("$text - not number")
+            return
         }
+        val fahrenheit = celsius * 1.8 + 32
+        println("${String.format("%.2f", celsius)} °C = ${String.format("%.2f", fahrenheit)} °F")
     }
 }

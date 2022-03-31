@@ -1,6 +1,7 @@
 package commands
 
 import Command
+import java.lang.NumberFormatException
 
 class TimerCommand: Command {
 
@@ -8,23 +9,32 @@ class TimerCommand: Command {
     override val description = "timer from your number to 0"
 
     override fun execute(text: String){
-        val timerCount: Int? = text.toIntOrNull()
-        val timeout = if(timerCount in 5..10){
-           timerCount
-        }else 5
-        timeout?.let {  }
+        val inputNum: Int
+        try {
+            inputNum = text.toInt()
+        }catch (e: NumberFormatException){
+            startTimer()
+            return
+        }
+        if (inputNum in 5..10){
+            startTimer(inputNum)
+        }else{
+            startTimer()
+        }
     }
 
-    private fun startTimer(time: Int){
-        for(i in time downTo 1){
-            println("$i...")
+    private fun startTimer(time: Int = 5){
+        var timerCount = time
+        while (timerCount >= 0){
+            println("$timerCount...")
+            timerCount--
             Thread.sleep(THREAD_SLEEP_TIME_MS)
         }
-        println(0)
     }
 
-
     companion object{
-     private const val THREAD_SLEEP_TIME_MS = 1000L
+        private const val THREAD_SLEEP_TIME_MS = 1000L
+        const val MAX_TIMER_VALUE = 10
+        const val MIN_TIMER_VALUE = 5
     }
 }
