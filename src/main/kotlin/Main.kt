@@ -14,7 +14,7 @@ val allCommands = listOf(
     Timer(),
     TemperatureConversionFToC(),
     TemperatureConversionCToF(),
-    ScreenOutPut()
+    FizzbuzzCommand()
 )
 
 fun main() {

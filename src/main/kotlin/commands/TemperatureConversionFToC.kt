@@ -8,17 +8,20 @@ class TemperatureConversionFToC : Command {
     override val description: String = "Temperature conversion from fahrenheit to celsius"
 
     override fun execute(text: String) {
-        val numOfUser : Double
+        val numFromUser: Double
         try {
-            numOfUser = text.toDouble()
-        } catch (e: NumberFormatException){
+            numFromUser = text.toDouble()
+        } catch (e: NumberFormatException) {
             println("Uncorrected enter!")
             return
         }
-        val temperaturaInCelcius = (numOfUser - 32.0) / 1.8
-        println("${DecimalFormat(DECIMAL_FORMAT).format(numOfUser)} ℉ = " +
-                "${DecimalFormat(DECIMAL_FORMAT).format(temperaturaInCelcius)} ℃")
+        val temperaturaInCelcius = (numFromUser - 32.0) / 1.8
+        println(
+            "${DecimalFormat(DECIMAL_FORMAT).format(numFromUser)} ℉ = " +
+                    "${DecimalFormat(DECIMAL_FORMAT).format(temperaturaInCelcius)} ℃"
+        )
     }
+
     companion object {
         const val DECIMAL_FORMAT = "#0.00"
     }

@@ -7,30 +7,30 @@ class Timer : Command {
     override val description = "User enter number for timer in the range 5...10"
 
     override fun execute(text: String) {
-        var numOfUser : Int
+        var numFromUser: Int
         try {
-            numOfUser = text.toInt()
-        } catch (e: NumberFormatException){
+            numFromUser = text.toInt()
+        } catch (e: NumberFormatException) {
             println("Uncorrected number!")
             return
         }
-        when (numOfUser) {
+        when (numFromUser) {
             in 5..10 -> {
-                while (numOfUser != 0) {
-                    println("$numOfUser...")
+                while (numFromUser != 0) {
+                    println("$numFromUser...")
                     Thread.sleep(1000)
-                    numOfUser--
+                    numFromUser--
                 }
             }
             !in 5..10 -> {
-                numOfUser = 5
-                while (numOfUser != 0) {
-                    println("$numOfUser...")
+                numFromUser = 5
+                while (numFromUser != 0) {
+                    println("$numFromUser...")
                     Thread.sleep(1000)
-                    numOfUser--
+                    numFromUser--
                 }
             }
         }
-        println("$numOfUser")
+        println("$numFromUser")
     }
 }

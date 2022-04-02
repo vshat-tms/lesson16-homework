@@ -2,20 +2,20 @@ package commands
 
 import Command
 
-class ScreenOutPut : Command {
+class FizzbuzzCommand : Command {
     override val keyword: String = "fizzbuzz"
     override val description: String = "User enter number which enter to screen in the range 20...100"
 
     override fun execute(text: String) {
-        val numOfUser: Int
+        val numFromUser: Int
         try {
-            numOfUser = text.toInt()
-        } catch (e: NumberFormatException){
+            numFromUser = text.toInt()
+        } catch (e: NumberFormatException) {
             println("Uncorrected number!")
             return
         }
-        if (numOfUser in 20..100) {
-            for (i in 1..numOfUser) {
+        if (numFromUser in 20..100) {
+            for (i in 1..numFromUser) {
                 when {
                     i % 15 == 0 -> println("FizzBuzz")
                     i % 5 == 0 -> println("Buzz")
